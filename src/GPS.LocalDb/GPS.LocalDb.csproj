@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>LocalDb</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Version>2019.0.2</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="scripts/*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="dist/SqlLocalDB.msi">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1"/>
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.1.3" />
+  </ItemGroup>
+</Project>
